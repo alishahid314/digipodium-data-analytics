@@ -1,0 +1,50 @@
+import random
+import sys 
+import pygame
+import pygame.locals
+
+#global variable for the gam
+FPS =32 # frame per second
+SCREENWIDTH = 289
+SCREENHEIGHT = 511
+SCREEN = pygame.display.set_mode((SCREENWIDTH,SCREENHEIGHT)) #TO INTIALIZE DISPLAY OF GIVEN SIZE
+GROUNDY = SCREENHEIGHT*0.8
+GAME_SPRITES = {}
+GAME_SOUND = {}
+PLAYER ='\gallery\sounds\sprites\bird.png'
+BACKGROUND  = '\gallery\sounds\sprites\backgroud.png'
+PIPE = '\gallery\sounds\sprites\pipe.png'
+
+if __name__=="__main__":
+    #here game will start
+    pygame.init()  #intialize pygame modue
+    FPSCLOCK = pygame.time.Clock()
+    pygame.display.set_caption('flappy bird by shahid')
+    GAME_SPRITES['numbers'] = (
+        pygame.image.load('gallery\sounds\sprites\0.png').convert_alpha(),
+        pygame.image.load('gallery\sounds\sprites\1.png').convert_alpha(),
+        pygame.image.load('gallery\sounds\sprites\2.png').convert_alpha(),
+        pygame.image.load('gallery\sounds\sprites\3.png').convert_alpha(),
+        pygame.image.load('gallery\sounds\sprites\4.png').convert_alpha(),
+        pygame.image.load('gallery\sounds\sprites\5.png').convert_alpha(),
+        pygame.image.load('gallery\sounds\sprites\6.png').convert_alpha(),
+        pygame.image.load('gallery\sounds\sprites\7.png').convert_alpha(),
+        pygame.image.load('gallery\sounds\sprites\8.png').convert_alpha(),
+        pygame.image.load('gallery\sounds\sprites\9.png').convert_alpha(),
+)
+
+GAME_SPRITES['message']=pygame.image.load('gallery\sounds\sprites\message.png').convert_alpha()
+GAME_SPRITES['base']=pygame.image.load('gallery/\sounds\sprites\base.png').convert_alpha()
+GAME_SPRITES['pipe']=(pygame.transform.rotate(pygame.image.load(PIPE).convert_alpha(),180), pygame.image.load(PIPE).convert_alpha())
+
+#game sound
+GAME_SOUND['die']= pygame.mixer.sound('gallery\sounds\die.wav.mp3')
+GAME_SOUND['hit']= pygame.mixer.sound('gallery\sounds\hit.wav.mp3')
+GAME_SOUND['point']= pygame.mixer.sound('gallery\sounds\point.wav.mp3')
+GAME_SOUND['smoosh']= pygame.mixer.sound('gallery\sounds\smoosh.wav.mp3')
+GAME_SOUND['wing']= pygame.mixer.sound('gallery\souns\wing.wav.mp3')
+
+
+ 
+ 
+ 

@@ -1,22 +1,27 @@
-from turtle import*
-a = Turtle()
-a.getscreen().bgcolor("black")
+import turtle
+t= turtle.Turtle()
+t.screen.bgcolor('black')
+t.pensize(2)
+t.color('green')
+t.left(90)
+t.backward(100)
+t.speed(100)
+t.shape('turtle')
 
-a.penup()
-a.goto(-200,100)
-a.pendown()
-a.color("yellow")
-
-a.speed(25)
-def star(turtle,size):
-    if size<=10:
-        return
+def tree(i):
+    if i<10:
+         return
     else:
-        turtle.begin_fill()
-        for i in range (5):
-            turtle.forward(size)
-            star(turtle,size/3)
-            turtle.left(216)
-            turtle.end_fill()
-star(a,360)
-turtle.done()            
+         t.forward(i)
+         t.color('green')
+         t.circle(2)
+         t.color('brown')
+         t.left(30)
+         tree(3*i/4)
+         t.right(60)
+         tree(3*i/4)
+         t.left(30)
+         t.backward(i)
+
+tree(100)
+turtle.done()
